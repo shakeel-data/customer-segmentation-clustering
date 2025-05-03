@@ -154,6 +154,17 @@ data = data.drop(to_drop, axis=1)
 ```python
 data.describe()
 ```
+| Metric | Income     | Kidhome | Teenhome | Recency | Wines     | Fruits   | Meat      | Fish     | Sweets   | Age     | Spent    | Family_Size  | Is_Parent  |
+|--------|------------|---------|----------|---------|-----------|----------|-----------|----------|----------|---------|----------|--------------|------------|
+| Count  | 2216       | 2216    | 2216     | 2216    | 2216      | 2216     | 2216      | 2216     | 2216     | 2216    | 2216     | 2216         | 2216       |
+| Mean   | 52247.25   | 0.44    | 0.51     | 49.01   | 305.09    | 26.36    | 166.99    | 37.64    | 27.03    | 52.18   | 607.08   | 2.59         | 0.71       |
+| Std    | 25173.08   | 0.54    | 0.54     | 28.95   | 337.33    | 39.79    | 224.28    | 54.75    | 41.07    | 11.99   | 602.90   | 0.91         | 0.45       |
+| Min    | 1730       | 0       | 0        | 0       | 0         | 0        | 0         | 0        | 0        | 25      | 5        | 1            | 0          |
+| 25%    | 35303      | 0       | 0        | 24      | 24        | 2        | 16        | 3        | 1        | 44      | 69       | 2            | 0          |
+| 50%    | 51381.5    | 0       | 0        | 49      | 174.5     | 8        | 68        | 12       | 8        | 51      | 396.5    | 3            | 1          |
+| 75%    | 68522      | 1       | 1        | 74      | 505       | 33       | 232.25    | 50       | 33       | 62      | 1048     | 3            | 1          |
+| Max    | 666666     | 2       | 2        | 99      | 1493      | 199      | 1725      | 259      | 262      | 128     | 2525     | 5            | 1          |
+
 **8 rows × 28 columns**
 
 **The discrepancies in mean and max values for Income and Age are noted, with the max age being 128 due to the data being from an older source. We will now visualize some selected features for a broader view of the data.**
@@ -243,17 +254,171 @@ scaled_ds.head()
 | -0.893586  | 0.913196  | -0.822754 | -0.929699 | -0.795514 | 0.357935  | 0.570540  | -0.178542 | 1.339513  | -0.147184 | ... | -0.229679            | 1.290224           | -0.544908          | -0.206048     | 0.334530  | 0.280110  | 0.740959     | -1.264598 | -0.654644    | -1.581139  |
 | -0.893586  | -1.176114 | 1.040021  | -0.929699 | -0.795514 | -0.872618 | -0.561961 | -0.655787 | -0.504911 | -0.585335 | ... | -0.913000            | -0.555814          | 0.279818           | -1.060584     | -1.289547 | -0.920135 | 0.740959     | 0.069987  | 0.449070     | 0.632456   |
 | 0.571657   | 0.294307  | 1.040021  | -0.929699 | 1.554453  | -0.392257 | 0.419540  | -0.218684 | 0.152508  | -0.001133 | ... | 0.111982             | 0.059532           | -0.132545          | -0.951915     | -1.033114 | -0.307562 | 0.740959     | 0.069987  | 0.449070     | 0.632456   |
-5 rows × 23 columns
 
+**5 rows × 23 columns**
 
+## 8. 🧬 Dimensionality Reduction
+We will perform dimensionality reduction using Principal Component Analysis (PCA) to reduce correlated and redundant features before classification. PCA minimizes information loss while increasing interpretability. The dimensions will be reduced to 3.
 
+**Steps:**
+- Apply PCA for dimensionality reduction
+- Plot the reduced dataframe
 
+```python
+#Initiating PCA to reduce dimentions aka features to 3
+pca = PCA(n_components=3)
+pca.fit(scaled_ds)
+PCA_ds = pd.DataFrame(pca.transform(scaled_ds), columns=(["col1","col2", "col3"]))
+PCA_ds.describe().T
+```
 
+| Metric | col1       | col2       | col3       |
+|--------|------------|------------|------------|
+| Count  | 2212.0     | 2212.0     | 2212.0     |
+| Mean   | 0.000000   | 0.000000   | -0.000000  |
+| Std    | 2.878602   | 1.709469   | 1.231687   |
+| Min    | -5.978124  | -4.194757  | -3.625248  |
+| 25%    | -2.539470  | -1.323929  | -0.853713  |
+| 50%    | -0.781595  | -0.173721  | -0.050842  |
+| 75%    | 2.386380   | 1.234851   | 0.863974   |
+| Max    | 7.452915   | 6.168189   | 6.750458   |
 
+### 🧊 3D reduced Dimension
 
+```python
+#A 3D Projection Of Data In The Reduced Dimension
+x =PCA_ds["col1"]
+y =PCA_ds["col2"]
+z =PCA_ds["col3"]
+#To plot
+fig = plt.figure(figsize=(10,8))
+ax = fig.add_subplot(111, projection="3d")
+ax.scatter(x,y,z, c="maroon", marker="o" )
+ax.set_title("A 3D Projection Of Data In The Reduced Dimension")
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/2403165c-ddd6-4982-a064-bd047496af5e)
 
+## 9. Clustering
+We will apply Agglomerative Clustering, a hierarchical method that iteratively merges data points until the target number of clusters is formed, following dimensionality reduction to three features.
 
+### Elbow Method
+```python
+# Quick examination of elbow method to find numbers of clusters to make.
+print('Elbow Method to determine the number of clusters to be formed:')
+Elbow_M = KElbowVisualizer(KMeans(), k=10)
+Elbow_M.fit(PCA_ds)
+Elbow_M.show()
+```
+![image](https://github.com/user-attachments/assets/e0aa0800-5910-4e16-ae22-7b4e19fd16ba)
 
+### Agglomerative Clustering Model
+```python
+#Initiating the Agglomerative Clustering model 
+AC = AgglomerativeClustering(n_clusters=4)
+# fit model and predict clusters
+yhat_AC = AC.fit_predict(PCA_ds)
+PCA_ds["Clusters"] = yhat_AC
+#Adding the Clusters feature to the orignal dataframe.
+data["Clusters"]= yhat_AC
+```
+
+### 3D 🧊 distribution
+```python
+#Plotting the clusters
+fig = plt.figure(figsize=(10,8))
+ax = plt.subplot(111, projection='3d', label="bla")
+ax.scatter(x, y, z, s=40, c=PCA_ds["Clusters"], marker='o', cmap = cmap )
+ax.set_title("The Plot Of The Clusters")
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/ca3f43b8-7853-4b7d-9862-5b3a659aa29a)
+
+## 10. Evaluating Models
+As this is an unsupervised clustering task, there is no labeled target for evaluation. Instead, we analyze the clusters through exploratory data analysis to uncover meaningful patterns. We begin by reviewing the distribution of data points across the clusters.
+
+```python
+#Plotting countplot of clusters
+pal = ["#682F2F","#B9C0C9", "#9F8A78","#F3AB60"]
+pl = sns.countplot(x=data["Clusters"], palette= pal)
+pl.set_title("Distribution Of The Clusters")
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/84de830b-299e-41d9-b6b9-447e71a16cdc)
+
+```python
+pl = sns.scatterplot(data = data,x=data["Spent"], y=data["Income"],hue=data["Clusters"], palette= pal)
+pl.set_title("Cluster's Profile Based On Income And Spending")
+plt.legend()
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/db9dfd4d-6643-4f68-a4d4-61710052c49a)
+**The Income vs. Spending plot reveals distinct cluster patterns:**
+- Group 0: High spending, average income
+- Group 1: High spending, high income
+- Group 2: Low spending, low income
+- Group 3: High spending, low income
+
+```python
+plt.figure()
+pl=sns.swarmplot(x=data["Clusters"], y=data["Spent"], color= "#CBEDDD", alpha=0.5 )
+pl=sns.boxenplot(x=data["Clusters"], y=data["Spent"], palette=pal)
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/351df264-94eb-4054-80d0-438290d04c6a)
+- From the plot, it's clear that Cluster 1 represents the largest group of customers, followed closely by Cluster 0.
+- We can now explore the spending behavior within each cluster to help inform targeted marketing strategies.
+
+```python
+#Creating a feature to get a sum of accepted promotions 
+data["Total_Promos"] = data["AcceptedCmp1"]+ data["AcceptedCmp2"]+ data["AcceptedCmp3"]+ data["AcceptedCmp4"]+ data["AcceptedCmp5"]
+#Plotting count of total campaign accepted.
+plt.figure()
+pl = sns.countplot(x=data["Total_Promos"],hue=data["Clusters"], palette= pal)
+pl.set_title("Count Of Promotion Accepted")
+pl.set_xlabel("Number Of Total Accepted Promotions")
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/e294a370-930a-4cee-b509-5cdbc6fb745a)
+- The response to past campaigns has been underwhelming, with very few participants overall and none engaging in all five campaigns.
+- This suggests a need for better-targeted and more strategically planned campaigns to effectively boost sales.
+
+```python
+#Plotting the number of deals purchased
+plt.figure()
+pl=sns.boxenplot(y=data["NumDealsPurchases"],x=data["Clusters"], palette= pal)
+pl.set_title("Number of Deals Purchased")
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/ccd956b4-463c-4449-a541-fbd0dd8c8ff4)
+- Unlike the campaigns, the deals performed well—especially with Cluster 0 and Cluster 3.
+- However, our high-value Cluster 1 customers show little interest in deals, and Cluster 2 remains largely unresponsive to both campaigns and deals.
+
+```python
+#for more details on the purchasing style 
+Places =["NumWebPurchases", "NumCatalogPurchases", "NumStorePurchases",  "NumWebVisitsMonth"] 
+
+for i in Places:
+    plt.figure()
+    sns.jointplot(x=data[i],y = data["Spent"],hue=data["Clusters"], palette= pal)
+    plt.show()
+```
+![image](https://github.com/user-attachments/assets/96cdf1ea-075e-422d-ab27-9eb0edc92707)
+![image](https://github.com/user-attachments/assets/7984e741-c668-4f36-b159-3685c1d8cede)
+![image](https://github.com/user-attachments/assets/8e5feece-9405-4fe1-b5f7-eaeb8df19411)
+![image](https://github.com/user-attachments/assets/7d4c991c-b061-4df3-9b20-1ce60e429e72)
+
+## 11. Profiling
+With clusters formed and purchasing habits analyzed, we'll now profile customers by plotting key personal traits across clusters. This will help identify star customers and those needing more marketing attention
+
+```python
+Personal = [ "Kidhome","Teenhome","Customer_For", "Age", "Children", "Family_Size", "Is_Parent", "Education","Living_With"]
+
+for i in Personal:
+    plt.figure()
+    sns.jointplot(x=data[i], y=data["Spent"], hue =data["Clusters"], kind="kde", palette=pal)
+    plt.show()
+```
 
 
 
