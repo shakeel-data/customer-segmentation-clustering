@@ -78,7 +78,7 @@ print("The total number of data-points after removing the rows with missing valu
 
 Next, we will create a feature from "Dt_Customer" to indicate the number of days a customer has been registered, relative to the most recent customer. To do this, we will first check the newest and oldest recorded dates.
 
-## 3. Convert date with correct format - Dt_Customer
+## 3. Convert date with correct format – Dt_Customer
 
 ```python
 data["Dt_Customer"] = pd.to_datetime(data["Dt_Customer"], dayfirst=True)
@@ -93,7 +93,7 @@ print("The oldest customer's enrolment date in the records:", dates.min())
 **The newest customer's enrolment date in the records: 2014-06-29**
 **The oldest customer's enrolment date in the records: 2012-07-30**
 
-## 4. Created a feature Customer_For
+## 4. Create a feature – Customer_For
 
 ```python
 days = []
@@ -299,10 +299,10 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/2403165c-ddd6-4982-a064-bd047496af5e)
 
-## 9. Clustering
+## 9. 🔴 Clustering
 We will apply Agglomerative Clustering, a hierarchical method that iteratively merges data points until the target number of clusters is formed, following dimensionality reduction to three features.
 
-### Elbow Method
+### 🔺 Elbow Method
 ```python
 # Quick examination of elbow method to find numbers of clusters to make.
 print('Elbow Method to determine the number of clusters to be formed:')
@@ -312,7 +312,7 @@ Elbow_M.show()
 ```
 ![image](https://github.com/user-attachments/assets/e0aa0800-5910-4e16-ae22-7b4e19fd16ba)
 
-### Agglomerative Clustering Model
+### 🌿 Agglomerative Clustering Model
 ```python
 #Initiating the Agglomerative Clustering model 
 AC = AgglomerativeClustering(n_clusters=4)
@@ -323,7 +323,7 @@ PCA_ds["Clusters"] = yhat_AC
 data["Clusters"]= yhat_AC
 ```
 
-### 3D 🧊 distribution
+### 🧊 3D distribution
 ```python
 #Plotting the clusters
 fig = plt.figure(figsize=(10,8))
@@ -334,7 +334,7 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/ca3f43b8-7853-4b7d-9862-5b3a659aa29a)
 
-## 10. Evaluating Models
+## 10. 🤖 Evaluating Models
 As this is an unsupervised clustering task, there is no labeled target for evaluation. Instead, we analyze the clusters through exploratory data analysis to uncover meaningful patterns. We begin by reviewing the distribution of data points across the clusters.
 
 ```python
