@@ -405,8 +405,8 @@ for i in Places:
 ```
 ![image](https://github.com/user-attachments/assets/96cdf1ea-075e-422d-ab27-9eb0edc92707)
 ![image](https://github.com/user-attachments/assets/7984e741-c668-4f36-b159-3685c1d8cede)
-![image](https://github.com/user-attachments/assets/8e5feece-9405-4fe1-b5f7-eaeb8df19411)
-![image](https://github.com/user-attachments/assets/7d4c991c-b061-4df3-9b20-1ce60e429e72)
+![image](https://github.com/user-attachments/assets/0591a0cb-cb54-42d8-a263-1ca8117c39ba)
+![image](https://github.com/user-attachments/assets/528d62bc-c95f-4d55-b00b-7ee6c820c4c2)
 
 ## 11. Profiling
 With clusters formed and purchasing habits analyzed, we'll now profile customers by plotting key personal traits across clusters. This will help identify star customers and those needing more marketing attention
