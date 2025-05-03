@@ -54,6 +54,7 @@ data = pd.read_csv("marketing_campaign.csv", sep="\t")
 print("Number of datapoints:", len(data))
 data.head()
 ```
+![image](https://github.com/user-attachments/assets/9e1e29d9-565b-45c6-b7c2-15c64ca7d988)
 
 
 
