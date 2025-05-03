@@ -410,6 +410,7 @@ for i in Places:
 
 ## 11. 🧾 Profiling
 With clusters formed and purchasing habits analyzed, we'll now profile customers by plotting key personal traits across clusters. This will help identify star customers and those needing more marketing attention
+![image](https://github.com/user-attachments/assets/a8d2a338-9661-4d8b-a3e5-fd7d434a2005)
 
 ```python
 Personal = [ "Kidhome","Teenhome","Customer_For", "Age", "Children", "Family_Size", "Is_Parent", "Education","Living_With"]
@@ -429,7 +430,6 @@ for i in Personal:
 ![image](https://github.com/user-attachments/assets/f749f21b-ad6e-430d-aff9-da7854c55c6c)
 ![image](https://github.com/user-attachments/assets/7048d3db-7c79-4b7a-9b8d-4a99abdf894c)
 
-![image](https://github.com/user-attachments/assets/a8d2a338-9661-4d8b-a3e5-fd7d434a2005)
 
 
 ## 🌟 Highlights and Key Insights
