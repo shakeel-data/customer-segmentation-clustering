@@ -14,9 +14,9 @@ This project focuses on customer segmentation using **unsupervised learning tech
 
 ## 📁 Data Sources
 - Kaggle
-  <a href="">csv</a>
+  <a href="https://github.com/shakeel-data/customer-segmentation-clustering/blob/main/marketing_campaign.csv">csv</a>
 - Python
-  <a href="">codes</a>
+  <a href="https://github.com/shakeel-data/customer-segmentation-clustering/blob/main/customer_segmentation_clustering.ipynb">codes</a>
 
 ## 🪜 Project Workflow
 ### 1. Load Packages and Data Ingestion
