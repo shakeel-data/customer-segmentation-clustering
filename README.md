@@ -7,10 +7,10 @@ Customer segmentation is a critical practice for businesses as it helps them **d
 This project focuses on customer segmentation using **unsupervised learning techniques to identify distinct groups within a customer base.** The goal is to help businesses make data-driven decisions such as personalized marketing, product recommendations, and resource allocation. The dataset used contains key features like **age, gender, annual income, and spending score.** These were preprocessed through steps including data **cleaning, encoding, and feature scaling.** The analysis aims to uncover hidden patterns in customer behavior that can be translated into **actionable business strategies.**
 
 ## 🎯 Key Objectives
-**Data Exploration and Preprocessing:** Thoroughly **explore and clean the customer dataset** by handling missing values, normalizing features, and preparing the data for clustering.
-**Segmentation of Customers:** Identify distinct customer segments based on **shared attributes and behaviors, providing a clear view** of the different customer groups.
-**Clustering with K-Means:** Implement and fine-tune the K-Means clustering algorithm to **group customers into meaningful segments based on their characteristics.**
-**Cluster Analysis and Insights:** Analyze the features of each customer segment to **uncover patterns and characteristics,** which can help design targeted marketing strategies and improve customer engagement.
+- **Data Exploration and Preprocessing:** Thoroughly **explore and clean the customer dataset** by handling missing values, normalizing features, and preparing the data for clustering.
+- **Segmentation of Customers:** Identify distinct customer segments based on **shared attributes and behaviors, providing a clear view** of the different customer groups.
+- **Clustering with K-Means:** Implement and fine-tune the K-Means clustering algorithm to **group customers into meaningful segments based on their characteristics.**
+- **Cluster Analysis and Insights:** Analyze the features of each customer segment to **uncover patterns and characteristics,** which can help design targeted marketing strategies and improve customer engagement.
 
 ## 📁 Data Sources
 - Kaggle
@@ -445,8 +445,8 @@ for i in Personal:
   - Libraries: ```numpy```, ```pandas```, ```matplotlib```, ```seaborn```
 - **Machine Learning** – Model development and evaluation
   - Scikit-learn: ```KMeans```, ```PCA ```, ```StandardScaler ```, ```LabelEncoder ```, ```AgglomerativeClustering ```, ```Metrics ```
-  - Yellowbrick: ```Elbow Method```
-  - mpl_toolkits (Axes3D): ```.mplot3d```
+  - Yellowbrick: ```KElbowVisualizer```
+  - mpl_toolkits (Axes3D): ```mplot3d```
   - Metrics: ```silhouette_score```
   - Warnings & Sys: Handling runtime warnings and system-level settings
 
