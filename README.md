@@ -408,7 +408,7 @@ for i in Places:
 ![image](https://github.com/user-attachments/assets/0591a0cb-cb54-42d8-a263-1ca8117c39ba)
 ![image](https://github.com/user-attachments/assets/528d62bc-c95f-4d55-b00b-7ee6c820c4c2)
 
-## 11. Profiling
+## 11. 🧾 Profiling
 With clusters formed and purchasing habits analyzed, we'll now profile customers by plotting key personal traits across clusters. This will help identify star customers and those needing more marketing attention
 
 ```python
@@ -419,6 +419,43 @@ for i in Personal:
     sns.jointplot(x=data[i], y=data["Spent"], hue =data["Clusters"], kind="kde", palette=pal)
     plt.show()
 ```
+![image](https://github.com/user-attachments/assets/d4359378-c12e-47b1-9626-e96b739c98e9)
+![image](https://github.com/user-attachments/assets/5a547cde-d0c7-47c6-9b5c-48fba080f1d2)
+![image](https://github.com/user-attachments/assets/df1eb985-8acd-4ecc-add0-c28764e77971)
+![image](https://github.com/user-attachments/assets/9a33befd-0b63-486f-9dc9-669bd10f27b1)
+![image](https://github.com/user-attachments/assets/27c50c71-869b-4e12-8f27-5097ef4afea7)
+![image](https://github.com/user-attachments/assets/81301a28-5dfc-4672-a018-f0babff2d76e)
+![image](https://github.com/user-attachments/assets/e79dbfaf-3422-4210-a8b1-a63af15cc6d8)
+![image](https://github.com/user-attachments/assets/f749f21b-ad6e-430d-aff9-da7854c55c6c)
+![image](https://github.com/user-attachments/assets/7048d3db-7c79-4b7a-9b8d-4a99abdf894c)
+
+![image](https://github.com/user-attachments/assets/a8d2a338-9661-4d8b-a3e5-fd7d434a2005)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ✅ Conclusion
+
+
+
+
+
+
+
+
 
 
 
