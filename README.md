@@ -450,6 +450,6 @@ for i in Personal:
 - **Warnings & Sys** – Handling runtime warnings and system-level settings
 
 ## ✅ Conclusion
-The K-Means clustering analysis successfully identified distinct customer segments based on key characteristics and behaviors, such as income, spending patterns, and demographic information. These segments provide actionable insights that can be leveraged to design targeted marketing campaigns, personalized offers, and loyalty programs that better align with customer needs.
+The K-Means clustering analysis successfully identified **distinct customer segments based on key characteristics and behaviors, such as income, spending patterns, and demographic information.** These segments provide actionable insights that can be leveraged to design targeted **marketing campaigns, personalized offers, and loyalty programs** that better align with customer needs.
 
 While the analysis offers valuable insights, it does have some limitations. The dataset used is relatively small and lacks dynamic behavioral data over time, which could affect the robustness of the segmentation. Additionally, the model's performance could improve with more detailed and comprehensive data.
