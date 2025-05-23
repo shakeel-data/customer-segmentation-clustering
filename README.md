@@ -126,7 +126,8 @@ data["Age"] = 2021-data["Year_Birth"]
 
 #Total spendings on various items
 data["Spent"] = data["MntWines"]+ data["MntFruits"]+ data["MntMeatProducts"]+ data["MntFishProducts"]+ data["MntSweetProducts"]+ data["MntGoldProds"]
-
+```
+```python
 #Deriving living situation by marital status"Alone"
 data["Living_With"]=data["Marital_Status"].replace({"Married":"Partner", "Together":"Partner", "Absurd":"Alone", "Widow":"Alone", "YOLO":"Alone", "Divorced":"Alone", "Single":"Alone",})
 
