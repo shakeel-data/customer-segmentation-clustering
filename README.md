@@ -22,7 +22,6 @@ This project focuses on customer segmentation using **unsupervised learning tech
 ### 1. Load Packages and Data Ingestion
 
 ```python
-#Importing the Libraries
 import numpy as np
 import pandas as pd
 import datetime
