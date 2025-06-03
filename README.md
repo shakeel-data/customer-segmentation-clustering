@@ -441,7 +441,7 @@ for i in Personal:
 ## ☁️ Technologies and Tools
 - **Kaggle** – Dataset source
 - **Jupyter Notebook** – Interactive environment for coding and presenting analysis
-- **Python**
+- **Python** – Data manipulation, analysis and Visualization
   - Libraries: ```numpy```, ```pandas```, ```matplotlib```, ```seaborn```
 - **Machine Learning** – Model development and evaluation
   - Scikit-learn: ```KMeans```, ```PCA ```, ```StandardScaler ```, ```LabelEncoder ```, ```AgglomerativeClustering ```, ```Metrics ```
