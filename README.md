@@ -42,7 +42,7 @@ from sklearn import metrics
 import warnings
 import sys
 if not sys.warnoptions:
-    warnings.simplefilter("ignore")
+ warnings.simplefilter("ignore")
 np.random.seed(42)
 ```
 
