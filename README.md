@@ -77,7 +77,7 @@ print("The total number of data-points after removing the rows with missing valu
 
 Next, we will create a feature from "Dt_Customer" to indicate the number of days a customer has been registered, relative to the most recent customer. To do this, we will first check the newest and oldest recorded dates.
 
-## 3. Convert date with correct format – Dt_Customer
+## 3. Convert date with correct format: Dt_Customer
 
 ```python
 data["Dt_Customer"] = pd.to_datetime(data["Dt_Customer"], dayfirst=True)
