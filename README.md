@@ -19,7 +19,7 @@ This project focuses on customer segmentation using **unsupervised learning tech
   <a href="https://github.com/shakeel-data/customer-segmentation-clustering/blob/main/customer_segmentation_clustering.ipynb">codes</a>
 
 ## 🪜 Project Workflow
-### 1. 📥 Load Packages and Data Ingestion
+## 1. 📥 Load Packages and Data Ingestion
 
 ```python
 import numpy as np
