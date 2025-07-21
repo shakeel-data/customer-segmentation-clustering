@@ -92,7 +92,7 @@ print("The oldest customer's enrolment date in the records:", dates.min())
 **The newest customer's enrolment date in the records: 2014-06-29**
 **The oldest customer's enrolment date in the records: 2012-07-30**
 
-## 4. Create a feature – Customer_For
+## 4. Create a feature: Customer_For
 
 ```python
 days = []
