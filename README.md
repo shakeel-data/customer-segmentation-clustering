@@ -1,4 +1,4 @@
-# 👤 Customer Segmentation Project | KMeans + PCA + Yellowbrick            
+# 👤 Customer Segmentation Project | KMeans, PCA            
 ![image](https://github.com/user-attachments/assets/5468e320-c1f2-46c6-b84b-87a2c15fd688)
 
 Customer segmentation is a critical practice for businesses as it helps them **divide their customer base into distinct groups based on shared characteristics, behaviors, or needs**. This approach allows businesses to tailor their marketing strategies, product offerings, and services more effectively. By understanding different customer segments, companies can target specific groups with personalized communication and promotions, increasing engagement, loyalty, and overall satisfaction. Additionally, segmentation helps in **optimizing resource allocation, improving sales conversion, and identifying new market opportunities, ultimately leading to higher profitability and sustainable growth.**
@@ -438,7 +438,7 @@ for i in Personal:
 - **Dimensionality Reduction for Visualization:** Principal Component Analysis **(PCA)** was applied to reduce the high-dimensional feature space into two principal components, allowing for clear and insightful **3D visualizations of the clusters.**
 - **Insightful Cluster Profiling:** Each cluster was analyzed based on key features such as **income, spending score, age, family size, and purchasing behavior.** This revealed meaningful segments like high-income low spenders, young high spenders, and other behavior-based groups, offering actionable insights for **personalized marketing strategies.**
 
-## ☁️ Technologies and Tools
+## ☁️ Tools and Technologies
 - **Kaggle** – Dataset source
 - **Jupyter Notebook** – Interactive environment for coding and presenting analysis
 - **Python** – Data manipulation, analysis and Visualization
